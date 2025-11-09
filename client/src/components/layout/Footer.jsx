@@ -43,8 +43,100 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-secondary-900 text-secondary-100">
-      <div className="container-custom">
+    <footer className="relative bg-gradient-to-b from-secondary-900 to-secondary-950 text-secondary-100">
+      {/* Wave SVG */}
+      <div className="absolute top-0 left-0 w-full overflow-hidden leading-[0] transform -translate-y-[1px]">
+        <svg
+          className="relative block w-full h-[180px] sm:h-[220px] md:h-[260px]"
+          viewBox="0 0 1440 320"
+          preserveAspectRatio="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            {/* Vertical gradients for a soft light-to-deep blend */}
+            <linearGradient
+              id="footerWaveTop"
+              x1="0%"
+              y1="0%"
+              x2="0%"
+              y2="100%"
+            >
+              <stop
+                offset="0%"
+                style={{ stopColor: "#e796f3", stopOpacity: 0.6 }}
+              />
+              <stop
+                offset="60%"
+                style={{ stopColor: "#cf78e3", stopOpacity: 0.55 }}
+              />
+              <stop
+                offset="100%"
+                style={{ stopColor: "#8561a1", stopOpacity: 0.5 }}
+              />
+            </linearGradient>
+            <linearGradient
+              id="footerWaveMid"
+              x1="0%"
+              y1="0%"
+              x2="0%"
+              y2="100%"
+            >
+              <stop
+                offset="0%"
+                style={{ stopColor: "#cf78e3", stopOpacity: 0.6 }}
+              />
+              <stop
+                offset="60%"
+                style={{ stopColor: "#8561a1", stopOpacity: 0.65 }}
+              />
+              <stop
+                offset="100%"
+                style={{ stopColor: "#74469e", stopOpacity: 0.65 }}
+              />
+            </linearGradient>
+            <linearGradient
+              id="footerWaveBase"
+              x1="0%"
+              y1="0%"
+              x2="0%"
+              y2="100%"
+            >
+              <stop
+                offset="0%"
+                style={{ stopColor: "#74469e", stopOpacity: 1 }}
+              />
+              <stop
+                offset="50%"
+                style={{ stopColor: "#5b308c", stopOpacity: 1 }}
+              />
+              <stop
+                offset="100%"
+                style={{ stopColor: "#0f172a", stopOpacity: 1 }}
+              />
+            </linearGradient>
+          </defs>
+
+          {/* Top wave - thin, light, pronounced curve like reference */}
+          <path
+            d="M0,80 C 100,20 260,30 360,60 C 520,110 720,140 900,120 C 1120,95 1300,40 1440,85 L1440,0 L0,0 Z"
+            fill="url(#footerWaveTop)"
+          />
+
+          {/* Mid wave - thicker, slightly offset underlap */}
+          <path
+            d="M0,120 C 160,160 340,190 500,170 C 680,145 860,105 1040,110 C 1240,118 1360,150 1440,130 L1440,0 L0,0 Z"
+            fill="url(#footerWaveMid)"
+          />
+
+          {/* Base wave - deepest, forms the footer top silhouette */}
+          <path
+            d="M0,170 C 220,230 460,260 720,240 C 980,220 1200,180 1440,210 L1440,0 L0,0 Z"
+            fill="url(#footerWaveBase)"
+          />
+        </svg>
+      </div>
+
+      <div className="container-custom pt-40 sm:pt-48 md:pt-56">
         <div className="py-12 lg:py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 lg:gap-6">
             <div className="lg:col-span-2">

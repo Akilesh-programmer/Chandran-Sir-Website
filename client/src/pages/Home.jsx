@@ -1,13 +1,110 @@
 const Home = () => {
   return (
-    <div className="min-h-screen">
-      <div className="container-custom py-20">
-        <h1 className="text-5xl font-display font-bold text-center mb-6">
-          Welcome to <span className="gradient-text">Our Platform</span>
-        </h1>
-        <p className="text-xl text-secondary-600 text-center max-w-3xl mx-auto">
-          Transforming data into actionable insights for modern businesses
-        </p>
+    <div className="min-h-screen bg-gradient-to-br from-white via-primary-50/30 to-white">
+      <div className="container-custom section-padding">
+        <div className="max-w-5xl mx-auto text-center space-y-8">
+          <div className="inline-block">
+            <span className="inline-block px-4 py-2 bg-brand-purple/10 text-brand-purple font-semibold text-sm rounded-full border border-brand-purple/20 mb-6">
+              ✨ Data Science & Machine Learning Solutions
+            </span>
+          </div>
+
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-bold text-secondary-900 leading-tight">
+            Transform Your Data Into{" "}
+            <span className="gradient-text">Actionable Insights</span>
+          </h1>
+
+          <p className="text-xl md:text-2xl text-secondary-600 leading-relaxed max-w-3xl mx-auto">
+            Empowering modern businesses with cutting-edge analytics, machine
+            learning, and intelligent solutions that drive measurable results.
+          </p>
+
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6">
+            <button className="btn-primary px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all">
+              Get Started
+            </button>
+            <button className="btn-secondary px-8 py-4 text-lg font-semibold">
+              Learn More
+            </button>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-16">
+            <div className="p-6 bg-white rounded-xl border border-secondary-100 shadow-sm hover:shadow-md hover:border-brand-purple/30 transition-all">
+              <div className="w-14 h-14 bg-gradient-to-br from-brand-purple to-brand-accent rounded-lg flex items-center justify-center mb-4 mx-auto">
+                <svg
+                  className="w-7 h-7 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-xl font-display font-bold text-secondary-900 mb-2">
+                Advanced Analytics
+              </h3>
+              <p className="text-secondary-600 leading-relaxed">
+                Unlock powerful insights from your data with our comprehensive
+                analytics solutions.
+              </p>
+            </div>
+
+            <div className="p-6 bg-white rounded-xl border border-secondary-100 shadow-sm hover:shadow-md hover:border-brand-purple/30 transition-all">
+              <div className="w-14 h-14 bg-gradient-to-br from-brand-purple to-brand-accent rounded-lg flex items-center justify-center mb-4 mx-auto">
+                <svg
+                  className="w-7 h-7 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M13 10V3L4 14h7v7l9-11h-7z"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-xl font-display font-bold text-secondary-900 mb-2">
+                Machine Learning
+              </h3>
+              <p className="text-secondary-600 leading-relaxed">
+                Deploy intelligent models that learn and adapt to drive business
+                growth.
+              </p>
+            </div>
+
+            <div className="p-6 bg-white rounded-xl border border-secondary-100 shadow-sm hover:shadow-md hover:border-brand-purple/30 transition-all">
+              <div className="w-14 h-14 bg-gradient-to-br from-brand-purple to-brand-accent rounded-lg flex items-center justify-center mb-4 mx-auto">
+                <svg
+                  className="w-7 h-7 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-xl font-display font-bold text-secondary-900 mb-2">
+                Enterprise Ready
+              </h3>
+              <p className="text-secondary-600 leading-relaxed">
+                Scalable, secure solutions designed for organizations of all
+                sizes.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
