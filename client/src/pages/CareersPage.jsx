@@ -1,6 +1,36 @@
+import { useState } from "react";
 import PageHero from "../components/common/PageHero";
 
 const CareersPage = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    position: "",
+    resume: null,
+    coverLetter: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleFileChange = (e) => {
+    setFormData((prev) => ({
+      ...prev,
+      resume: e.target.files[0],
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // TODO: Implement form submission logic
+    console.log("Application submitted:", formData);
+  };
   const openPositions = [
     {
       id: 1,
@@ -66,6 +96,7 @@ const CareersPage = () => {
 
   const benefits = [
     {
+      id: "salary",
       icon: (
         <svg
           className="w-6 h-6"
@@ -85,6 +116,7 @@ const CareersPage = () => {
       description: "Industry-leading compensation packages",
     },
     {
+      id: "global",
       icon: (
         <svg
           className="w-6 h-6"
@@ -104,6 +136,7 @@ const CareersPage = () => {
       description: "Work with clients worldwide",
     },
     {
+      id: "learning",
       icon: (
         <svg
           className="w-6 h-6"
@@ -123,6 +156,7 @@ const CareersPage = () => {
       description: "Continuous training and development",
     },
     {
+      id: "flexible",
       icon: (
         <svg
           className="w-6 h-6"
@@ -142,6 +176,7 @@ const CareersPage = () => {
       description: "Work-life balance is our priority",
     },
     {
+      id: "innovation",
       icon: (
         <svg
           className="w-6 h-6"
@@ -161,6 +196,7 @@ const CareersPage = () => {
       description: "Work on cutting-edge projects",
     },
     {
+      id: "team",
       icon: (
         <svg
           className="w-6 h-6"
@@ -208,15 +244,10 @@ const CareersPage = () => {
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-              {benefits.map((benefit, index) => (
+              {benefits.map((benefit) => (
                 <div
-                  key={index}
+                  key={benefit.id}
                   className="bg-gradient-to-br from-white to-primary-50/30 rounded-2xl p-6 lg:p-8 border-2 border-brand-purple/10 hover:border-brand-purple/30 transition-all duration-300 hover:shadow-lg group"
-                  style={{
-                    animation: "fadeIn 0.6s ease-out forwards",
-                    animationDelay: `${index * 100}ms`,
-                    opacity: 0,
-                  }}
                 >
                   <div className="w-12 h-12 bg-gradient-to-br from-brand-purple to-brand-accent rounded-xl flex items-center justify-center text-white mb-4 group-hover:scale-110 transition-transform duration-300">
                     {benefit.icon}
@@ -231,8 +262,213 @@ const CareersPage = () => {
           </div>
         </section>
 
-        {/* Open Positions Section */}
+        {/* Application Form Section */}
         <section className="py-16 md:py-24 bg-gradient-to-br from-white via-primary-50/30 to-white">
+          <div className="container-custom">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+              {/* Left Side - Image */}
+              <div className="order-2 lg:order-1">
+                <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+                  <img
+                    src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=1000&fit=crop&q=80"
+                    alt="Join our team"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-brand-purple/30 via-transparent to-transparent" />
+                  <div className="absolute bottom-8 left-8 right-8 text-white">
+                    <h3 className="text-2xl sm:text-3xl font-display font-bold mb-2">
+                      Start Your Journey
+                    </h3>
+                    <p className="text-brand-glow text-lg">
+                      Join a team of innovators and experts
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Side - Application Form */}
+              <div className="order-1 lg:order-2">
+                <div className="mb-8">
+                  <span className="inline-block px-4 py-2 bg-brand-purple/10 text-brand-purple font-semibold text-sm rounded-full border border-brand-purple/20 mb-4">
+                    Apply Now
+                  </span>
+                  <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-secondary-900 mb-4">
+                    Submit Your{" "}
+                    <span className="gradient-text">Application</span>
+                  </h2>
+                  <p className="text-lg text-secondary-600">
+                    Fill out the form below and we'll review your application.
+                  </p>
+                </div>
+
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  {/* Name */}
+                  <div>
+                    <label
+                      htmlFor="name"
+                      className="block text-sm font-semibold text-secondary-900 mb-2"
+                    >
+                      Full Name *
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-3 rounded-xl border-2 border-secondary-200 focus:border-brand-purple focus:outline-none transition-colors"
+                      placeholder="John Doe"
+                    />
+                  </div>
+
+                  {/* Email */}
+                  <div>
+                    <label
+                      htmlFor="email"
+                      className="block text-sm font-semibold text-secondary-900 mb-2"
+                    >
+                      Email Address *
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-3 rounded-xl border-2 border-secondary-200 focus:border-brand-purple focus:outline-none transition-colors"
+                      placeholder="john@email.com"
+                    />
+                  </div>
+
+                  {/* Phone */}
+                  <div>
+                    <label
+                      htmlFor="phone"
+                      className="block text-sm font-semibold text-secondary-900 mb-2"
+                    >
+                      Phone Number
+                    </label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 rounded-xl border-2 border-secondary-200 focus:border-brand-purple focus:outline-none transition-colors"
+                      placeholder="+1 (555) 123-4567"
+                    />
+                  </div>
+
+                  {/* Position */}
+                  <div>
+                    <label
+                      htmlFor="position"
+                      className="block text-sm font-semibold text-secondary-900 mb-2"
+                    >
+                      Applying For Position *
+                    </label>
+                    <select
+                      id="position"
+                      name="position"
+                      value={formData.position}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-3 rounded-xl border-2 border-secondary-200 focus:border-brand-purple focus:outline-none transition-colors"
+                    >
+                      <option value="">Select a position</option>
+                      <option value="Senior Data Scientist">
+                        Senior Data Scientist
+                      </option>
+                      <option value="Machine Learning Engineer">
+                        Machine Learning Engineer
+                      </option>
+                      <option value="Data Engineer">Data Engineer</option>
+                      <option value="AI Research Scientist">
+                        AI Research Scientist
+                      </option>
+                      <option value="Business Intelligence Analyst">
+                        Business Intelligence Analyst
+                      </option>
+                      <option value="Data Science Intern">
+                        Data Science Intern
+                      </option>
+                      <option value="Other">Other</option>
+                    </select>
+                  </div>
+
+                  {/* Resume Upload */}
+                  <div>
+                    <label
+                      htmlFor="resume"
+                      className="block text-sm font-semibold text-secondary-900 mb-2"
+                    >
+                      Resume / CV *
+                    </label>
+                    <div className="relative">
+                      <input
+                        type="file"
+                        id="resume"
+                        name="resume"
+                        onChange={handleFileChange}
+                        accept=".pdf,.doc,.docx"
+                        required
+                        className="w-full px-4 py-3 rounded-xl border-2 border-secondary-200 focus:border-brand-purple focus:outline-none transition-colors file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-brand-purple/10 file:text-brand-purple hover:file:bg-brand-purple/20 file:cursor-pointer"
+                      />
+                    </div>
+                    <p className="mt-2 text-xs text-secondary-500">
+                      Accepted formats: PDF, DOC, DOCX (Max 5MB)
+                    </p>
+                  </div>
+
+                  {/* Cover Letter */}
+                  <div>
+                    <label
+                      htmlFor="coverLetter"
+                      className="block text-sm font-semibold text-secondary-900 mb-2"
+                    >
+                      Cover Letter / Message
+                    </label>
+                    <textarea
+                      id="coverLetter"
+                      name="coverLetter"
+                      value={formData.coverLetter}
+                      onChange={handleChange}
+                      rows={5}
+                      className="w-full px-4 py-3 rounded-xl border-2 border-secondary-200 focus:border-brand-purple focus:outline-none transition-colors resize-none"
+                      placeholder="Tell us why you'd be a great fit..."
+                    />
+                  </div>
+
+                  {/* Submit Button */}
+                  <button
+                    type="submit"
+                    className="w-full px-8 py-4 bg-gradient-to-r from-brand-purple to-brand-accent text-white font-bold rounded-xl hover:shadow-xl hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-3"
+                  >
+                    <span>Submit Application</span>
+                    <svg
+                      className="w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
+                      />
+                    </svg>
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Open Positions Section */}
+        <section className="py-16 md:py-24">
           <div className="container-custom">
             <div className="text-center mb-12 lg:mb-16">
               <span className="inline-block px-4 py-2 bg-brand-purple/10 text-brand-purple font-semibold text-sm rounded-full border border-brand-purple/20 mb-4">

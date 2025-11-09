@@ -157,15 +157,14 @@ const ContactPage = () => {
         <section className="py-16 md:py-24">
           <div className="container-custom">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-              {/* Contact Form */}
+              {/* Contact Form - Submit Your Queries */}
               <div>
                 <div className="mb-8">
                   <span className="inline-block px-4 py-2 bg-brand-purple/10 text-brand-purple font-semibold text-sm rounded-full border border-brand-purple/20 mb-4">
-                    Send Us a Message
+                    Submit Your Queries
                   </span>
                   <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-secondary-900 mb-4">
-                    Let's Start a{" "}
-                    <span className="gradient-text">Conversation</span>
+                    We're Here to <span className="gradient-text">Help</span>
                   </h2>
                   <p className="text-lg text-secondary-600">
                     Fill out the form below and we'll get back to you within 24
@@ -312,18 +311,18 @@ const ContactPage = () => {
                 </form>
               </div>
 
-              {/* Contact Information */}
+              {/* Contact Information - Reach To Us */}
               <div>
                 <div className="mb-8">
                   <span className="inline-block px-4 py-2 bg-brand-purple/10 text-brand-purple font-semibold text-sm rounded-full border border-brand-purple/20 mb-4">
-                    Contact Information
+                    Reach To Us
                   </span>
                   <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-secondary-900 mb-4">
-                    Reach Out <span className="gradient-text">Directly</span>
+                    Get In <span className="gradient-text">Touch</span>
                   </h2>
                   <p className="text-lg text-secondary-600">
-                    Prefer to reach out directly? Here are all the ways you can
-                    contact us.
+                    We're here to help. Reach out through any of the channels
+                    below and our team will respond promptly.
                   </p>
                 </div>
 

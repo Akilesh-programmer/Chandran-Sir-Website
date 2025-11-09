@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Layout } from "./components/layout";
 import Home from "./pages/Home";
 import AboutPage from "./pages/AboutPage";
+import TeamPage from "./pages/TeamPage";
 import CareersPage from "./pages/CareersPage";
 import ContactPage from "./pages/ContactPage";
 import PlaceholderPage from "./pages/PlaceholderPage";
@@ -16,10 +17,7 @@ function App() {
 
           {/* Company Routes */}
           <Route path="company/about" element={<AboutPage />} />
-          <Route
-            path="company/team"
-            element={<PlaceholderPage title="Our Team" />}
-          />
+          <Route path="company/team" element={<TeamPage />} />
           <Route path="company/careers" element={<CareersPage />} />
           <Route path="company/contact" element={<ContactPage />} />
 
