@@ -1,5 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { footerData, socialMediaLinks } from "../../constants/footer";
+import {
+  scrollToElement,
+  scrollToTop,
+  extractSectionId,
+  extractBasePath,
+} from "../../utils/scrollUtils";
 
 const SocialIcon = ({ icon }) => {
   const iconPaths = {
@@ -41,6 +47,32 @@ const SocialIcon = ({ icon }) => {
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleLinkClick = (e, path) => {
+    e.preventDefault();
+    const sectionId = extractSectionId(path);
+    const basePath = extractBasePath(path);
+
+    if (sectionId) {
+      // Path contains anchor (e.g., "/services#analytics")
+      if (location.pathname === basePath) {
+        // Already on the page, just scroll to section
+        scrollToElement(sectionId, 80);
+      } else {
+        // Navigate to page first, then scroll to section
+        navigate(path);
+        setTimeout(() => {
+          scrollToElement(sectionId, 80);
+        }, 300);
+      }
+    } else {
+      // Regular page navigation (no anchor)
+      navigate(path);
+      scrollToTop();
+    }
+  };
 
   return (
     <footer className="relative bg-gradient-to-b from-secondary-900 to-secondary-950 text-secondary-100">
@@ -182,6 +214,7 @@ const Footer = () => {
                   <li key={link.path}>
                     <Link
                       to={link.path}
+                      onClick={(e) => handleLinkClick(e, link.path)}
                       className="text-secondary-300 hover:text-brand-accent transition-colors text-sm"
                     >
                       {link.label}
@@ -200,6 +233,7 @@ const Footer = () => {
                   <li key={link.path}>
                     <Link
                       to={link.path}
+                      onClick={(e) => handleLinkClick(e, link.path)}
                       className="text-secondary-300 hover:text-brand-accent transition-colors text-sm"
                     >
                       {link.label}
@@ -215,6 +249,7 @@ const Footer = () => {
                   <li key={link.path}>
                     <Link
                       to={link.path}
+                      onClick={(e) => handleLinkClick(e, link.path)}
                       className="text-secondary-300 hover:text-brand-accent transition-colors text-sm"
                     >
                       {link.label}
@@ -233,6 +268,7 @@ const Footer = () => {
                   <li key={link.path}>
                     <Link
                       to={link.path}
+                      onClick={(e) => handleLinkClick(e, link.path)}
                       className="text-secondary-300 hover:text-brand-accent transition-colors text-sm"
                     >
                       {link.label}
@@ -251,6 +287,7 @@ const Footer = () => {
                   <li key={link.path}>
                     <Link
                       to={link.path}
+                      onClick={(e) => handleLinkClick(e, link.path)}
                       className="text-secondary-300 hover:text-brand-accent transition-colors text-sm"
                     >
                       {link.label}

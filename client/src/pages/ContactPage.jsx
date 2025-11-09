@@ -157,15 +157,14 @@ const ContactPage = () => {
         <section className="py-16 md:py-24">
           <div className="container-custom">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-              {/* Contact Form */}
+              {/* Contact Form - Submit Your Queries */}
               <div>
                 <div className="mb-8">
                   <span className="inline-block px-4 py-2 bg-brand-purple/10 text-brand-purple font-semibold text-sm rounded-full border border-brand-purple/20 mb-4">
-                    Send Us a Message
+                    Submit Your Queries
                   </span>
                   <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-secondary-900 mb-4">
-                    Let's Start a{" "}
-                    <span className="gradient-text">Conversation</span>
+                    We're Here to <span className="gradient-text">Help</span>
                   </h2>
                   <p className="text-lg text-secondary-600">
                     Fill out the form below and we'll get back to you within 24
@@ -312,22 +311,22 @@ const ContactPage = () => {
                 </form>
               </div>
 
-              {/* Contact Information */}
+              {/* Contact Information - Reach To Us */}
               <div>
                 <div className="mb-8">
                   <span className="inline-block px-4 py-2 bg-brand-purple/10 text-brand-purple font-semibold text-sm rounded-full border border-brand-purple/20 mb-4">
-                    Contact Information
+                    Reach To Us
                   </span>
                   <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-secondary-900 mb-4">
-                    Reach Out <span className="gradient-text">Directly</span>
+                    Get In <span className="gradient-text">Touch</span>
                   </h2>
                   <p className="text-lg text-secondary-600">
-                    Prefer to reach out directly? Here are all the ways you can
-                    contact us.
+                    We're here to help. Reach out through any of the channels
+                    below and our team will respond promptly.
                   </p>
                 </div>
 
-                <div className="space-y-6 mb-8">
+                <div className="space-y-6">
                   {contactInfo.map((info, index) => (
                     <div
                       key={index}
@@ -356,17 +355,22 @@ const ContactPage = () => {
                     </div>
                   ))}
                 </div>
+              </div>
+            </div>
 
-                {/* Social Links */}
-                <div className="bg-gradient-to-br from-brand-purple via-brand-medium to-brand-accent rounded-2xl p-8 text-white">
-                  <h3 className="text-2xl font-display font-bold mb-4">
+            {/* Social Links - Separate Centered Section */}
+            <div className="mt-16 max-w-2xl mx-auto">
+              <div className="bg-gradient-to-br from-brand-purple via-brand-medium to-brand-accent rounded-2xl p-8 md:p-10 text-white text-center shadow-2xl relative overflow-hidden">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1),transparent_60%)]" />
+                <div className="relative z-10">
+                  <h3 className="text-2xl sm:text-3xl font-display font-bold mb-3">
                     Follow Us
                   </h3>
-                  <p className="text-brand-glow mb-6">
+                  <p className="text-brand-glow mb-8 text-sm sm:text-base">
                     Stay updated with our latest insights, projects, and news on
                     social media.
                   </p>
-                  <div className="flex gap-4">
+                  <div className="flex gap-4 justify-center">
                     {socialLinks.map((social, index) => (
                       <a
                         key={index}

@@ -53,23 +53,23 @@ const PageHero = ({ title, subtitle, backgroundImage }) => {
           </div>
         </div>
 
-        {/* Scroll Indicator */}
+        {/* Scroll Indicator - Enhanced Animation */}
         <div className="absolute bottom-8 sm:bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-500">
-          <p className="text-white/80 text-sm sm:text-base font-medium tracking-wider uppercase">
+          <p className="text-white/80 text-sm sm:text-base font-medium tracking-wider uppercase animate-pulse">
             Scroll to Explore
           </p>
           <button
             onClick={scrollToContent}
-            className="group flex flex-col items-center gap-2 cursor-pointer"
+            className="group flex flex-col items-center gap-2 cursor-pointer hover:scale-110 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-brand-accent focus:ring-offset-2 focus:ring-offset-transparent rounded-lg p-2"
             aria-label="Scroll to content"
           >
             {/* Animated mouse icon */}
-            <div className="w-6 h-10 border-2 border-white/50 rounded-full flex items-start justify-center p-2 group-hover:border-brand-accent transition-colors">
-              <div className="w-1.5 h-3 bg-white/70 rounded-full animate-bounce group-hover:bg-brand-accent" />
+            <div className="w-6 h-10 border-2 border-white/50 rounded-full flex items-start justify-center p-2 group-hover:border-brand-accent transition-all duration-300 group-active:scale-95">
+              <div className="w-1.5 h-3 bg-white/70 rounded-full animate-bounce group-hover:bg-brand-accent transition-colors" />
             </div>
-            {/* Down arrow */}
+            {/* Down arrow with continuous animation */}
             <svg
-              className="w-6 h-6 text-white/70 animate-bounce group-hover:text-brand-accent transition-colors"
+              className="w-6 h-6 text-white/70 animate-bounce group-hover:text-brand-accent transition-all duration-300 group-hover:translate-y-1"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -85,8 +85,8 @@ const PageHero = ({ title, subtitle, backgroundImage }) => {
         </div>
       </div>
 
-      {/* Bottom gradient fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent" />
+      {/* Bottom gradient fade - Theme-oriented subtle gradient */}
+      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-primary-50/30 via-transparent to-transparent pointer-events-none" />
     </div>
   );
 };
