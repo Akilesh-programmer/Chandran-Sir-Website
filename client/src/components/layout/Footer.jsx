@@ -262,7 +262,7 @@ const Footer = () => {
                 <img
                   src="/full-logo-Photoroom.png"
                   alt="COAXARA Analytics"
-                  className="h-12 w-auto object-contain brightness-0 invert transition-all duration-300 group-hover:scale-105"
+                  className="h-12 w-auto object-contain transition-all duration-300 group-hover:scale-105"
                 />
               </Link>
               <p className="text-secondary-300 text-sm leading-relaxed mb-6 max-w-xs">
