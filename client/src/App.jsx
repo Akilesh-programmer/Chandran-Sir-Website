@@ -1,6 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Layout } from "./components/layout";
 import Home from "./pages/Home";
+import AboutPage from "./pages/AboutPage";
+import CareersPage from "./pages/CareersPage";
+import ContactPage from "./pages/ContactPage";
 import PlaceholderPage from "./pages/PlaceholderPage";
 import "./App.css";
 
@@ -11,22 +14,14 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
 
-          <Route
-            path="company/about"
-            element={<PlaceholderPage title="About Us" />}
-          />
+          {/* Company Routes */}
+          <Route path="company/about" element={<AboutPage />} />
           <Route
             path="company/team"
             element={<PlaceholderPage title="Our Team" />}
           />
-          <Route
-            path="company/careers"
-            element={<PlaceholderPage title="Careers" />}
-          />
-          <Route
-            path="company/contact"
-            element={<PlaceholderPage title="Contact Us" />}
-          />
+          <Route path="company/careers" element={<CareersPage />} />
+          <Route path="company/contact" element={<ContactPage />} />
 
           <Route
             path="industries/retail-fmcg"
