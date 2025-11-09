@@ -261,7 +261,7 @@ const Footer = () => {
               <Link to="/" className="flex items-center group mb-4">
                 <img
                   src="/full-logo-Photoroom.png"
-                  alt="COAXARA Analytics"
+                  alt="COXARA Analytics"
                   className="h-12 w-auto object-contain transition-all duration-300 group-hover:scale-105"
                 />
               </Link>
@@ -382,7 +382,7 @@ const Footer = () => {
         <div className="border-t border-secondary-800 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-secondary-400 text-sm">
-              © {currentYear} COAXARA Analytics. All rights reserved.
+              © {currentYear} COXARA Analytics. All rights reserved.
             </p>
             <div className="flex items-center gap-6">
               <Link
