@@ -1,4 +1,7 @@
 import HeroCarousel from "../components/home/HeroCarousel";
+import AboutSection from "../components/home/AboutSection";
+import ServicesSection from "../components/home/ServicesSection";
+import IndustriesSection from "../components/home/IndustriesSection";
 
 const Home = () => {
   return (
@@ -6,10 +9,27 @@ const Home = () => {
       {/* Hero Carousel */}
       <HeroCarousel />
 
-      {/* Features Section */}
-      <div className="bg-gradient-to-br from-white via-primary-50/30 to-white">
-        <div className="container-custom section-padding">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-16">
+      {/* About Section */}
+      <AboutSection />
+
+      {/* Services Section */}
+      <ServicesSection />
+
+      {/* Industries Section */}
+      <IndustriesSection />
+
+      {/* Quick Features Section (keeping the existing cards) */}
+      <div className="bg-gradient-to-br from-white via-primary-50/30 to-white py-16 md:py-24">
+        <div className="container-custom">
+          <div className="text-center mb-12">
+            <span className="inline-block px-4 py-2 bg-brand-purple/10 text-brand-purple font-semibold text-sm rounded-full border border-brand-purple/20 mb-4">
+              Why Choose Us
+            </span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-secondary-900 leading-tight">
+              Core <span className="gradient-text">Strengths</span>
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="p-6 bg-white rounded-xl border border-secondary-100 shadow-sm hover:shadow-md hover:border-brand-purple/30 transition-all">
               <div className="w-14 h-14 bg-gradient-to-br from-brand-purple to-brand-accent rounded-lg flex items-center justify-center mb-4 mx-auto">
                 <svg

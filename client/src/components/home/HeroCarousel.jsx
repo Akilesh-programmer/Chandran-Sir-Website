@@ -117,11 +117,11 @@ const HeroCarousel = () => {
                 {/* CTA Button */}
                 <button
                   onClick={handleContactClick}
-                  className="group relative inline-flex items-center gap-3 px-8 sm:px-10 py-4 sm:py-5 bg-brand-purple hover:bg-brand-deep text-white text-lg sm:text-xl font-semibold rounded-xl shadow-2xl hover:shadow-brand-purple/50 transition-all duration-300 hover:scale-105 active:scale-95 overflow-hidden"
+                  className="group relative inline-flex items-center gap-2 sm:gap-3 px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 bg-brand-purple hover:bg-brand-deep text-white text-base sm:text-lg md:text-xl font-semibold rounded-lg sm:rounded-xl shadow-2xl hover:shadow-brand-purple/50 transition-all duration-300 hover:scale-105 active:scale-95 overflow-hidden"
                 >
                   <span className="relative z-10">Let's Talk</span>
                   <svg
-                    className="relative z-10 w-5 h-5 sm:w-6 sm:h-6 transition-transform group-hover:translate-x-1"
+                    className="relative z-10 w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 transition-transform group-hover:translate-x-1"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
