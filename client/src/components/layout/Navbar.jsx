@@ -125,7 +125,7 @@ const Navbar = () => {
           >
             <img
               src="/full-logo-Photoroom.png"
-              alt="COAXARA Analytics"
+              alt="COXARA Analytics"
               className="h-10 sm:h-12 w-auto object-contain transition-all duration-300 group-hover:scale-105 drop-shadow-md"
             />
           </Link>
