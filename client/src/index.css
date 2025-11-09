@@ -54,6 +54,107 @@
   .card-hover {
     @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
   }
+
+  /* Glassmorphism effects */
+  .glass-navbar {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(91, 48, 140, 0.12);
+  }
+
+  .glass-dropdown {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 
+      0 8px 32px 0 rgba(91, 48, 140, 0.18),
+      inset 0 1px 1px 0 rgba(255, 255, 255, 0.3);
+  }
+
+  .glass-mobile {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  /* Neomorphism effects */
+  .neo-card {
+    background: linear-gradient(145deg, #ffffff, #f3f4f6);
+    box-shadow: 
+      20px 20px 60px #d1d5db,
+      -20px -20px 60px #ffffff;
+  }
+
+  .neo-inset {
+    background: linear-gradient(145deg, #f3f4f6, #ffffff);
+    box-shadow: 
+      inset 5px 5px 10px #d1d5db,
+      inset -5px -5px 10px #ffffff;
+  }
+
+  /* Enhanced blur utilities */
+  .blur-light {
+    backdrop-filter: blur(8px) saturate(140%);
+    -webkit-backdrop-filter: blur(8px) saturate(140%);
+  }
+
+  .blur-medium {
+    backdrop-filter: blur(16px) saturate(160%);
+    -webkit-backdrop-filter: blur(16px) saturate(160%);
+  }
+
+  .blur-heavy {
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+  }
+
+  /* Dropdown animations */
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .animate-in {
+    animation: slideDown 0.2s ease-out forwards;
+  }
+
+  .fade-in {
+    animation: fadeIn 0.2s ease-out forwards;
+  }
+
+  .slide-in-from-top-2 {
+    animation: slideDown 0.2s ease-out forwards;
+  }
 }
 
 @layer utilities {
