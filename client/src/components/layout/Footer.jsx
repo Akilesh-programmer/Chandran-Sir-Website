@@ -76,6 +76,92 @@ const Footer = () => {
 
   return (
     <footer className="relative bg-gradient-to-b from-secondary-900 to-secondary-950 text-secondary-100">
+      {/* Top Light-Purple Wave touching white background (curved boundary) */}
+      <div className="absolute top-0 left-0 w-full overflow-hidden leading-[0] -translate-y-[1px] z-10 pointer-events-none">
+        <svg
+          className="relative block w-full h-[120px] sm:h-[140px] md:h-[160px]"
+          viewBox="0 0 1440 160"
+          preserveAspectRatio="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            {/* Soft purple gradient that fades to transparent at the very top to blend into white */}
+            <linearGradient
+              id="footerTopPurple"
+              x1="0%"
+              y1="0%"
+              x2="0%"
+              y2="100%"
+            >
+              <stop
+                offset="0%"
+                style={{ stopColor: "#ffffff", stopOpacity: 0 }}
+              />
+              <stop
+                offset="22%"
+                style={{ stopColor: "#e4d4f3", stopOpacity: 0.35 }}
+              />
+              <stop
+                offset="45%"
+                style={{ stopColor: "#c9a6e6", stopOpacity: 0.7 }}
+              />
+              <stop
+                offset="75%"
+                style={{ stopColor: "#9a72c8", stopOpacity: 0.9 }}
+              />
+              <stop
+                offset="100%"
+                style={{ stopColor: "#74469e", stopOpacity: 1 }}
+              />
+            </linearGradient>
+            {/* White feather overlay to create natural misty blend into the page background */}
+            <linearGradient
+              id="footerFadeToWhite"
+              x1="0%"
+              y1="0%"
+              x2="0%"
+              y2="100%"
+            >
+              <stop
+                offset="0%"
+                style={{ stopColor: "#ffffff", stopOpacity: 0.9 }}
+              />
+              <stop
+                offset="60%"
+                style={{ stopColor: "#ffffff", stopOpacity: 0.35 }}
+              />
+              <stop
+                offset="100%"
+                style={{ stopColor: "#ffffff", stopOpacity: 0 }}
+              />
+            </linearGradient>
+          </defs>
+          {/* Layered waves that curve into the white area above */}
+          <path
+            d="M0,12 L1440,12 L1440,52 C 1220,36 1060,30 880,38 C 680,47 480,64 280,54 C 180,49 90,45 0,52 Z"
+            fill="url(#footerTopPurple)"
+            opacity="0.55"
+          />
+          <path
+            d="M0,12 L1440,12 L1440,64 C 1180,50 980,42 780,48 C 560,55 360,74 160,62 C 100,58 50,56 0,62 Z"
+            fill="url(#footerTopPurple)"
+            opacity="0.75"
+          />
+          <path
+            d="M0,12 L1440,12 L1440,56 C 1260,44 1040,36 860,44 C 650,54 420,78 200,66 C 120,61 60,60 0,66 Z"
+            fill="url(#footerTopPurple)"
+          />
+          {/* Gentle white overlay to feather the top edge into white background */}
+          <rect
+            x="0"
+            y="0"
+            width="1440"
+            height="40"
+            fill="url(#footerFadeToWhite)"
+          />
+        </svg>
+      </div>
+
       {/* Wave SVG */}
       <div className="absolute top-0 left-0 w-full overflow-hidden leading-[0] transform -translate-y-[1px]">
         <svg
@@ -172,18 +258,12 @@ const Footer = () => {
         <div className="py-12 lg:py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 lg:gap-6">
             <div className="lg:col-span-2">
-              <Link to="/" className="flex items-center gap-3 group mb-4">
-                <div className="w-12 h-12 bg-gradient-to-br from-brand-purple to-brand-accent rounded-lg flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow">
-                  <span className="text-white font-bold text-xl">DS</span>
-                </div>
-                <div className="flex flex-col">
-                  <span className="text-lg font-display font-bold text-white leading-tight">
-                    Data Science
-                  </span>
-                  <span className="text-sm font-display font-semibold text-brand-accent leading-tight">
-                    & ML Solutions
-                  </span>
-                </div>
+              <Link to="/" className="flex items-center group mb-4">
+                <img
+                  src="/full-logo-Photoroom.png"
+                  alt="COAXARA Analytics"
+                  className="h-12 w-auto object-contain transition-all duration-300 group-hover:scale-105"
+                />
               </Link>
               <p className="text-secondary-300 text-sm leading-relaxed mb-6 max-w-xs">
                 Transforming data into actionable insights with cutting-edge
@@ -302,7 +382,7 @@ const Footer = () => {
         <div className="border-t border-secondary-800 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-secondary-400 text-sm">
-              © {currentYear} Data Science & ML Solutions. All rights reserved.
+              © {currentYear} COAXARA Analytics. All rights reserved.
             </p>
             <div className="flex items-center gap-6">
               <Link
