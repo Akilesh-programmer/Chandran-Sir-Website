@@ -1,33 +1,14 @@
+import HeroCarousel from "../components/home/HeroCarousel";
+
 const Home = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-white via-primary-50/30 to-white">
-      <div className="container-custom section-padding">
-        <div className="max-w-5xl mx-auto text-center space-y-8">
-          <div className="inline-block">
-            <span className="inline-block px-4 py-2 bg-brand-purple/10 text-brand-purple font-semibold text-sm rounded-full border border-brand-purple/20 mb-6">
-              ✨ Data Science & Machine Learning Solutions
-            </span>
-          </div>
+    <div className="min-h-screen">
+      {/* Hero Carousel */}
+      <HeroCarousel />
 
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-bold text-secondary-900 leading-tight">
-            Transform Your Data Into{" "}
-            <span className="gradient-text">Actionable Insights</span>
-          </h1>
-
-          <p className="text-xl md:text-2xl text-secondary-600 leading-relaxed max-w-3xl mx-auto">
-            Empowering modern businesses with cutting-edge analytics, machine
-            learning, and intelligent solutions that drive measurable results.
-          </p>
-
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6">
-            <button className="btn-primary px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all">
-              Get Started
-            </button>
-            <button className="btn-secondary px-8 py-4 text-lg font-semibold">
-              Learn More
-            </button>
-          </div>
-
+      {/* Features Section */}
+      <div className="bg-gradient-to-br from-white via-primary-50/30 to-white">
+        <div className="container-custom section-padding">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-16">
             <div className="p-6 bg-white rounded-xl border border-secondary-100 shadow-sm hover:shadow-md hover:border-brand-purple/30 transition-all">
               <div className="w-14 h-14 bg-gradient-to-br from-brand-purple to-brand-accent rounded-lg flex items-center justify-center mb-4 mx-auto">

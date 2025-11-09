@@ -1,6 +1,6 @@
 const PlaceholderPage = ({ title, description }) => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-white via-primary-50/20 to-white">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-white via-primary-50/20 to-white pt-20">
       <div className="container-custom text-center max-w-3xl">
         <div className="w-20 h-20 bg-gradient-to-br from-brand-purple to-brand-accent rounded-2xl flex items-center justify-center mx-auto mb-8 shadow-lg">
           <svg

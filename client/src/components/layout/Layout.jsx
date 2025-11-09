@@ -6,7 +6,7 @@ const Layout = () => {
   return (
     <div className="min-h-screen bg-white flex flex-col">
       <Navbar />
-      <main className="pt-20 flex-1 relative">
+      <main className="flex-1 relative">
         {/* Blur overlay for content below navbar - makes navbar text readable */}
         <div
           className="fixed top-0 left-0 right-0 h-24 pointer-events-none z-40"
