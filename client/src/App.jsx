@@ -1,25 +1,117 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Layout } from "./components/layout";
+import Home from "./pages/Home";
+import PlaceholderPage from "./pages/PlaceholderPage";
 import "./App.css";
 
 function App() {
   return (
-    <div className="min-h-screen bg-white">
-      <div className="container-custom">
-        <div className="flex items-center justify-center min-h-screen">
-          <div className="text-center">
-            <h1 className="text-5xl font-display font-bold mb-4">
-              <span className="gradient-text">Data Science & ML Startup</span>
-            </h1>
-            <p className="text-xl text-secondary-600 mb-8">
-              Professional setup complete. Ready for development.
-            </p>
-            <div className="flex gap-4 justify-center">
-              <button className="btn-primary">Get Started</button>
-              <button className="btn-secondary">Learn More</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+
+          <Route
+            path="company/about"
+            element={<PlaceholderPage title="About Us" />}
+          />
+          <Route
+            path="company/team"
+            element={<PlaceholderPage title="Our Team" />}
+          />
+          <Route
+            path="company/careers"
+            element={<PlaceholderPage title="Careers" />}
+          />
+          <Route
+            path="company/contact"
+            element={<PlaceholderPage title="Contact Us" />}
+          />
+
+          <Route
+            path="industries/retail-fmcg"
+            element={<PlaceholderPage title="Retail & FMCG" />}
+          />
+          <Route
+            path="industries/hospitality"
+            element={<PlaceholderPage title="Hospitality" />}
+          />
+          <Route
+            path="industries/healthcare"
+            element={<PlaceholderPage title="HealthCare" />}
+          />
+          <Route
+            path="industries/banking"
+            element={<PlaceholderPage title="Banking" />}
+          />
+
+          <Route
+            path="services/sales-analytics"
+            element={<PlaceholderPage title="Sales Analytics" />}
+          />
+          <Route
+            path="services/marketing-analytics"
+            element={<PlaceholderPage title="Marketing Analytics" />}
+          />
+          <Route
+            path="services/hr-analytics"
+            element={<PlaceholderPage title="HR Analytics" />}
+          />
+          <Route
+            path="services/customer-analytics"
+            element={<PlaceholderPage title="Customer Analytics" />}
+          />
+          <Route
+            path="services/supply-chain"
+            element={
+              <PlaceholderPage title="Supply Chain & Inventory Management" />
+            }
+          />
+
+          <Route
+            path="solutions/kpi"
+            element={<PlaceholderPage title="Key Performance Indicators" />}
+          />
+          <Route
+            path="solutions/customer-segregation"
+            element={<PlaceholderPage title="Customer Segregation" />}
+          />
+          <Route
+            path="solutions/roi"
+            element={<PlaceholderPage title="Return On Investment" />}
+          />
+          <Route
+            path="solutions/competition-analysis"
+            element={<PlaceholderPage title="Competition Analysis" />}
+          />
+          <Route
+            path="solutions/forecasting"
+            element={<PlaceholderPage title="Forecasting" />}
+          />
+          <Route
+            path="solutions/analytics-everywhere"
+            element={<PlaceholderPage title="Analytics Everywhere" />}
+          />
+
+          <Route path="aiimage" element={<PlaceholderPage title="AiImage" />} />
+
+          <Route path="biks/bi" element={<PlaceholderPage title="BIKS BI" />} />
+          <Route
+            path="biks/dashboard"
+            element={<PlaceholderPage title="BIKS Dashboard" />}
+          />
+          <Route
+            path="biks/personalized"
+            element={<PlaceholderPage title="Personalized BIKS" />}
+          />
+
+          <Route
+            path="resources/blog"
+            element={<PlaceholderPage title="Blog" />}
+          />
+        </Route>
+      </Routes>
+    </Router>
   );
 }
 

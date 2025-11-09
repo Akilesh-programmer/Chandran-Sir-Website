@@ -11,10 +11,15 @@
   
   body {
     @apply bg-white text-secondary-900 antialiased m-0 p-0;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
   }
 
   html {
     @apply scroll-smooth;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', 'Inter', sans-serif;
   }
 }
 

@@ -5,13 +5,13 @@ export const useScrollPosition = () => {
 
   useEffect(() => {
     const updatePosition = () => {
-      setScrollPosition(window.scrollY);
+      setScrollPosition(globalThis.scrollY);
     };
 
-    window.addEventListener("scroll", updatePosition);
+    globalThis.addEventListener("scroll", updatePosition);
     updatePosition();
 
-    return () => window.removeEventListener("scroll", updatePosition);
+    return () => globalThis.removeEventListener("scroll", updatePosition);
   }, []);
 
   return scrollPosition;
