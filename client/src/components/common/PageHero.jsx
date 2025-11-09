@@ -46,7 +46,7 @@ const PageHero = ({ title, subtitle, backgroundImage }) => {
           )}
 
           {/* Decorative line */}
-          <div className="mt-8 flex items-center justify-center gap-4 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300">
+          <div className="mt-8 mb-12 sm:mb-16 md:mb-20 flex items-center justify-center gap-4 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300">
             <div className="h-1 w-16 bg-gradient-to-r from-transparent via-brand-purple to-brand-accent rounded-full" />
             <div className="h-2 w-2 bg-brand-glow rounded-full" />
             <div className="h-1 w-16 bg-gradient-to-l from-transparent via-brand-accent to-brand-purple rounded-full" />

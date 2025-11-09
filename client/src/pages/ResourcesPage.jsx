@@ -1,6 +1,9 @@
+import { useState } from "react";
 import PageHero from "../components/common/PageHero";
 
 const ResourcesPage = () => {
+  const [activeCategory, setActiveCategory] = useState("All");
+
   const blogPosts = [
     {
       id: 1,
@@ -106,8 +109,9 @@ const ResourcesPage = () => {
               {categories.map((category) => (
                 <button
                   key={category}
+                  onClick={() => setActiveCategory(category)}
                   className={`px-6 py-2.5 rounded-full font-semibold text-sm transition-all duration-300 ${
-                    category === "All"
+                    category === activeCategory
                       ? "bg-gradient-to-r from-brand-purple to-brand-accent text-white shadow-md"
                       : "bg-white text-secondary-700 border-2 border-gray-200 hover:border-brand-purple/40 hover:text-brand-purple"
                   }`}

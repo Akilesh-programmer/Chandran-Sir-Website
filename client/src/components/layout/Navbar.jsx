@@ -149,11 +149,12 @@ const Navbar = () => {
                   <>
                     <button
                       onMouseEnter={() => setActiveDropdown(navItem.title)}
+                      onClick={() => navItem.path && handleNavClick(navItem)}
                       className={`group/btn relative px-4 py-2.5 text-secondary-800 font-semibold transition-all duration-200 flex items-center gap-1.5 rounded-xl overflow-hidden ${
                         activeDropdown === navItem.title
                           ? "text-brand-purple bg-white/60"
                           : "hover:text-brand-purple hover:bg-white/50"
-                      }`}
+                      } ${navItem.path ? "cursor-pointer" : ""}`}
                       id={`menu-button-${navItem.title.replaceAll(" ", "-")}`}
                     >
                       <div className="absolute inset-0 bg-gradient-to-r from-brand-purple/0 to-brand-accent/0 group-hover/btn:from-brand-purple/8 group-hover/btn:to-brand-accent/8 transition-all duration-300" />
@@ -200,11 +201,10 @@ const Navbar = () => {
                           }}
                         >
                           {navItem.items.map((item, index) => (
-                            <Link
+                            <button
                               key={item.path}
-                              to={item.path}
-                              className="group/item relative block px-5 py-3 text-secondary-900 hover:text-brand-purple font-medium transition-all duration-200 overflow-hidden"
-                              onClick={() => setActiveDropdown(null)}
+                              onClick={() => handleNavClick(item)}
+                              className="group/item relative block w-full text-left px-5 py-3 text-secondary-900 hover:text-brand-purple font-medium transition-all duration-200 overflow-hidden"
                               style={{
                                 animationDelay: `${index * 30}ms`,
                               }}
@@ -229,7 +229,7 @@ const Navbar = () => {
                                   {item.label}
                                 </span>
                               </span>
-                            </Link>
+                            </button>
                           ))}
                         </div>
                       </div>
@@ -322,12 +322,12 @@ const Navbar = () => {
             >
               {navItem.items ? (
                 <div>
-                  <button
-                    onClick={() => toggleDropdown(navItem.title)}
-                    className="group/mobile w-full px-6 py-4 text-left text-secondary-900 font-semibold flex items-center justify-between hover:bg-gradient-to-r hover:from-brand-purple/12 hover:to-brand-accent/12 active:scale-[0.99] transition-all duration-200 backdrop-blur-sm"
-                    aria-expanded={activeDropdown === navItem.title}
-                  >
-                    <span className="flex items-center gap-3">
+                  <div className="flex items-stretch">
+                    <button
+                      onClick={() => navItem.path && handleNavClick(navItem)}
+                      className="group/mobile flex-1 px-6 py-4 text-left text-secondary-900 font-semibold hover:bg-gradient-to-r hover:from-brand-purple/12 hover:to-brand-accent/12 active:scale-[0.99] transition-all duration-200 backdrop-blur-sm flex items-center gap-3"
+                      disabled={!navItem.path}
+                    >
                       <div
                         className={`w-1.5 h-1.5 rounded-full bg-brand-purple transition-all duration-300 ${
                           activeDropdown === navItem.title
@@ -336,29 +336,36 @@ const Navbar = () => {
                         }`}
                       />
                       {navItem.title}
-                    </span>
-                    <div
-                      className={`p-1.5 rounded-lg transition-all duration-300 ${
-                        activeDropdown === navItem.title
-                          ? "bg-brand-purple/20 rotate-180"
-                          : "bg-white/50 group-hover/mobile:bg-white/80"
-                      }`}
+                    </button>
+                    <button
+                      onClick={() => toggleDropdown(navItem.title)}
+                      className="px-4 py-4 hover:bg-gradient-to-r hover:from-brand-purple/12 hover:to-brand-accent/12 transition-all duration-200"
+                      aria-expanded={activeDropdown === navItem.title}
+                      aria-label={`Toggle ${navItem.title} menu`}
                     >
-                      <svg
-                        className="w-4 h-4 text-brand-purple transition-transform duration-300"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        strokeWidth={2.5}
+                      <div
+                        className={`p-1.5 rounded-lg transition-all duration-300 ${
+                          activeDropdown === navItem.title
+                            ? "bg-brand-purple/20 rotate-180"
+                            : "bg-white/50"
+                        }`}
                       >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M19 9l-7 7-7-7"
-                        />
-                      </svg>
-                    </div>
-                  </button>
+                        <svg
+                          className="w-4 h-4 text-brand-purple transition-transform duration-300"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                          strokeWidth={2.5}
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M19 9l-7 7-7-7"
+                          />
+                        </svg>
+                      </div>
+                    </button>
+                  </div>
                   <div
                     className={`overflow-hidden transition-all duration-300 ease-in-out ${
                       activeDropdown === navItem.title
