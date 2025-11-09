@@ -326,7 +326,7 @@ const ContactPage = () => {
                   </p>
                 </div>
 
-                <div className="space-y-6 mb-8">
+                <div className="space-y-6">
                   {contactInfo.map((info, index) => (
                     <div
                       key={index}
@@ -355,17 +355,22 @@ const ContactPage = () => {
                     </div>
                   ))}
                 </div>
+              </div>
+            </div>
 
-                {/* Social Links */}
-                <div className="bg-gradient-to-br from-brand-purple via-brand-medium to-brand-accent rounded-2xl p-8 text-white">
-                  <h3 className="text-2xl font-display font-bold mb-4">
+            {/* Social Links - Separate Centered Section */}
+            <div className="mt-16 max-w-2xl mx-auto">
+              <div className="bg-gradient-to-br from-brand-purple via-brand-medium to-brand-accent rounded-2xl p-8 md:p-10 text-white text-center shadow-2xl relative overflow-hidden">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1),transparent_60%)]" />
+                <div className="relative z-10">
+                  <h3 className="text-2xl sm:text-3xl font-display font-bold mb-3">
                     Follow Us
                   </h3>
-                  <p className="text-brand-glow mb-6">
+                  <p className="text-brand-glow mb-8 text-sm sm:text-base">
                     Stay updated with our latest insights, projects, and news on
                     social media.
                   </p>
-                  <div className="flex gap-4">
+                  <div className="flex gap-4 justify-center">
                     {socialLinks.map((social, index) => (
                       <a
                         key={index}

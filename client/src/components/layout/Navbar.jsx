@@ -1,7 +1,13 @@
 import { useState, useEffect, useRef, useLayoutEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { navigationData } from "../../constants/navigation";
 import { useScrollPosition } from "../../hooks/useScrollPosition";
+import {
+  scrollToElement,
+  scrollToTop,
+  extractSectionId,
+  extractBasePath,
+} from "../../utils/scrollUtils";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -51,11 +57,38 @@ const Navbar = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  const location = useLocation();
+
   const handleNavClick = (item) => {
     if (item.path) {
-      navigate(item.path);
+      const sectionId = extractSectionId(item.path);
+      const basePath = extractBasePath(item.path);
+
+      // Close mobile menu and dropdown
       setIsOpen(false);
       setActiveDropdown(null);
+
+      if (sectionId) {
+        // Path contains anchor (e.g., "/services#analytics")
+        if (location.pathname === basePath) {
+          // Already on the page, just scroll to section
+          setTimeout(() => {
+            scrollToElement(sectionId, safeNavHeight);
+          }, 100);
+        } else {
+          // Navigate to page first, then scroll to section
+          navigate(item.path);
+          setTimeout(() => {
+            scrollToElement(sectionId, safeNavHeight);
+          }, 300);
+        }
+      } else {
+        // Regular page navigation (no anchor)
+        navigate(item.path);
+        setTimeout(() => {
+          scrollToTop();
+        }, 100);
+      }
     }
   };
 
