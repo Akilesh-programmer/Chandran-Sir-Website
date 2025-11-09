@@ -10,43 +10,46 @@ export const navigationData = [
   },
   {
     title: "Industries",
+    path: "/industries",
     items: [
-      { label: "Retail & FMCG", path: "/industries/retail-fmcg" },
-      { label: "Hospitality", path: "/industries/hospitality" },
-      { label: "HealthCare", path: "/industries/healthcare" },
-      { label: "Banking", path: "/industries/banking" },
+      { label: "Retail & FMCG", path: "/industries#retail-fmcg" },
+      { label: "Hospitality", path: "/industries#hospitality" },
+      { label: "HealthCare", path: "/industries#healthcare" },
+      { label: "Banking", path: "/industries#banking" },
     ],
   },
   {
     title: "Services",
+    path: "/services",
     items: [
-      { label: "Sales Analytics", path: "/services/sales-analytics" },
-      { label: "Marketing Analytics", path: "/services/marketing-analytics" },
-      { label: "HR Analytics", path: "/services/hr-analytics" },
-      { label: "Customer Analytics", path: "/services/customer-analytics" },
+      { label: "Sales Analytics", path: "/services#sales-analytics" },
+      { label: "Marketing Analytics", path: "/services#marketing-analytics" },
+      { label: "HR Analytics", path: "/services#hr-analytics" },
+      { label: "Customer Analytics", path: "/services#customer-analytics" },
       {
         label: "Supply Chain & Inventory Management",
-        path: "/services/supply-chain",
+        path: "/services#supply-chain",
       },
     ],
   },
   {
     title: "Solutions",
+    path: "/solutions",
     items: [
-      { label: "Key Performance Indicators", path: "/solutions/kpi" },
+      { label: "Key Performance Indicators", path: "/solutions#kpi" },
       {
         label: "Customer Segregation",
-        path: "/solutions/customer-segregation",
+        path: "/solutions#customer-segregation",
       },
-      { label: "Return On Investment", path: "/solutions/roi" },
+      { label: "Return On Investment", path: "/solutions#roi" },
       {
         label: "Competition Analysis",
-        path: "/solutions/competition-analysis",
+        path: "/solutions#competition-analysis",
       },
-      { label: "Forecasting", path: "/solutions/forecasting" },
+      { label: "Forecasting", path: "/solutions#forecasting" },
       {
         label: "Analytics Everywhere",
-        path: "/solutions/analytics-everywhere",
+        path: "/solutions#analytics-everywhere",
       },
     ],
   },
@@ -56,14 +59,16 @@ export const navigationData = [
   },
   {
     title: "BIKS",
+    path: "/biks",
     items: [
-      { label: "BIKS BI", path: "/biks/bi" },
-      { label: "BIKS Dashboard", path: "/biks/dashboard" },
-      { label: "Personalized BIKS", path: "/biks/personalized" },
+      { label: "BIKS BI", path: "/biks#bi" },
+      { label: "BIKS Dashboard", path: "/biks#dashboard" },
+      { label: "Personalized BIKS", path: "/biks#personalized" },
     ],
   },
   {
     title: "Resources",
-    items: [{ label: "Blog", path: "/resources/blog" }],
+    path: "/resources",
+    items: [{ label: "Blog", path: "/resources#blog" }],
   },
 ];

@@ -76,6 +76,39 @@ const Footer = () => {
 
   return (
     <footer className="relative bg-gradient-to-b from-secondary-900 to-secondary-950 text-secondary-100">
+      {/* Top Curve Wave - Above the purple gradient */}
+      <div className="absolute top-0 left-0 w-full overflow-hidden leading-[0] transform -translate-y-[1px] rotate-180">
+        <svg
+          className="relative block w-full h-[80px] sm:h-[100px] md:h-[120px]"
+          viewBox="0 0 1440 120"
+          preserveAspectRatio="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <linearGradient
+              id="footerTopCurve"
+              x1="0%"
+              y1="0%"
+              x2="0%"
+              y2="100%"
+            >
+              <stop
+                offset="0%"
+                style={{ stopColor: "#ffffff", stopOpacity: 1 }}
+              />
+              <stop
+                offset="100%"
+                style={{ stopColor: "#f8f5fb", stopOpacity: 1 }}
+              />
+            </linearGradient>
+          </defs>
+          <path
+            d="M0,50 C 240,90 480,100 720,80 C 960,60 1200,70 1440,90 L1440,0 L0,0 Z"
+            fill="url(#footerTopCurve)"
+          />
+        </svg>
+      </div>
+
       {/* Wave SVG */}
       <div className="absolute top-0 left-0 w-full overflow-hidden leading-[0] transform -translate-y-[1px]">
         <svg
