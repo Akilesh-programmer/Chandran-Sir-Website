@@ -117,29 +117,17 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           <Link
             to="/"
-            className="flex items-center gap-3 group relative z-10"
+            className="flex items-center group relative z-10"
             onClick={() => {
               setIsOpen(false);
               setActiveDropdown(null);
             }}
           >
-            <div
-              className="w-12 h-12 bg-gradient-to-br from-brand-purple to-brand-accent rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-all duration-300 group-hover:scale-105"
-              style={{
-                boxShadow:
-                  "0 4px 20px rgba(91, 48, 140, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.2)",
-              }}
-            >
-              <span className="text-white font-bold text-xl">DS</span>
-            </div>
-            <div className="flex flex-col">
-              <span className="text-lg font-display font-bold text-secondary-900 leading-tight drop-shadow-sm">
-                Data Science
-              </span>
-              <span className="text-sm font-display font-semibold text-brand-purple leading-tight drop-shadow-sm">
-                & ML Solutions
-              </span>
-            </div>
+            <img
+              src="/full-logo-Photoroom.png"
+              alt="COAXARA Analytics"
+              className="h-10 sm:h-12 w-auto object-contain transition-all duration-300 group-hover:scale-105 drop-shadow-md"
+            />
           </Link>
 
           <div className="hidden lg:flex items-center gap-1 xl:gap-2">
